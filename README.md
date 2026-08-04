@@ -1,1 +1,3 @@
-# almahyra-pos-enterprise
+# Almahyra POS Enterprise
+
+Foundation structure.

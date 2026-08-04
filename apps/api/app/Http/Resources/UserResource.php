@@ -5,10 +5,12 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CategoryResource extends JsonResource
+class UserResource extends JsonResource
 {
     /**
      * Transform resource.
+     *
+     * @return array<string,mixed>
      */
     public function toArray(Request $request): array
     {
@@ -16,19 +18,19 @@ class CategoryResource extends JsonResource
 
             'id' => $this->id,
 
-            'public_id' => $this->public_id,
-
-            'code' => $this->code,
-
             'name' => $this->name,
 
-            'description' => $this->description,
+            'email' => $this->email,
 
-            'active' => $this->active,
+            'roles' => $this->getRoleNames(),
+
+            'permissions' => $this->getAllPermissions()
+                ->pluck('name')
+                ->values(),
 
             'created_at' => $this->created_at?->toDateTimeString(),
+
             'updated_at' => $this->updated_at?->toDateTimeString(),
-            'deleted_at' => $this->deleted_at?->toDateTimeString(),
 
         ];
     }

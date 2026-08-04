@@ -35,7 +35,7 @@ class Company extends Model
 
         'receipt_footer',
 
-        'active'
+        'active',
 
     ];
 }

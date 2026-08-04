@@ -28,7 +28,7 @@ class Category extends Model
 
         'updated_by',
 
-        'deleted_by'
+        'deleted_by',
 
     ];
 

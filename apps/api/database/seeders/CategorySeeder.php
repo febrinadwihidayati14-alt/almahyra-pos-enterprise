@@ -51,13 +51,13 @@ class CategorySeeder extends Seeder
             Category::updateOrCreate(
 
                 [
-                    'code' => $item['code']
+                    'code' => $item['code'],
                 ],
 
                 [
                     'name' => $item['name'],
                     'description' => $item['description'],
-                    'active' => true
+                    'active' => true,
                 ]
 
             );

@@ -12,8 +12,7 @@ class CategoryService
 {
     public function __construct(
         protected CategoryRepository $repository
-    ) {
-    }
+    ) {}
 
     /**
      * List category.
@@ -55,7 +54,7 @@ class CategoryService
         if ($this->repository->existsCode($data['code'])) {
 
             throw ValidationException::withMessages([
-                'code' => 'Kode kategori sudah digunakan.'
+                'code' => 'Kode kategori sudah digunakan.',
             ]);
 
         }
@@ -63,7 +62,7 @@ class CategoryService
         if ($this->repository->existsName($data['name'])) {
 
             throw ValidationException::withMessages([
-                'name' => 'Nama kategori sudah digunakan.'
+                'name' => 'Nama kategori sudah digunakan.',
             ]);
 
         }
@@ -85,7 +84,7 @@ class CategoryService
         )) {
 
             throw ValidationException::withMessages([
-                'code' => 'Kode kategori sudah digunakan.'
+                'code' => 'Kode kategori sudah digunakan.',
             ]);
 
         }
@@ -96,7 +95,7 @@ class CategoryService
         )) {
 
             throw ValidationException::withMessages([
-                'name' => 'Nama kategori sudah digunakan.'
+                'name' => 'Nama kategori sudah digunakan.',
             ]);
 
         }

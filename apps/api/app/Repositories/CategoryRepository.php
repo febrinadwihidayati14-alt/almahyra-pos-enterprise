@@ -30,7 +30,7 @@ class CategoryRepository
 
             })
 
-            ->when(!is_null($active), function ($query) use ($active) {
+            ->when(! is_null($active), function ($query) use ($active) {
 
                 $query->where('active', $active);
 
